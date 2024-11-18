@@ -30,14 +30,15 @@ url: "https://11110100.xyz" # the base hostname & protocol for your site, e.g. h
 #github_username:  jekyll
 
 # Build settings
-theme: minima
+remote-theme: jekyll/minima
+
 plugins:
-#  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-feed
   - jekyll-remote-theme
 
-remote-theme: jekyll/minima
 minima:
-  skin: auto
+  skin: dark
 
 # Exclude from processing.
 # The following items will not be processed, by default.
