@@ -1,0 +1,66 @@
+
+input {
+    width: 5em;
+    font-size: 12pt;
+}
+
+select {
+    font-size: 12pt;
+}
+
+label {
+    font-size: 12pt;
+}
+
+button {
+    font-size: 12pt;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+#main th, td {
+   padding: 6px;
+    padding: 5px 12px 5px 12px;
+    font-size: 12pt;
+}
+
+#main td {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    font-weight: 300;
+}
+
+.tooltip {
+    position: relative;
+    text-decoration: underline;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -100px;
+}
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}

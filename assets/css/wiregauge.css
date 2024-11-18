@@ -1,0 +1,82 @@
+#main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+a {
+    font-weight: 400;
+}
+
+#main img {
+    margin: 0 0 1em;
+}
+
+input {
+    width: 5em;
+    font-size: 12pt;
+    font-weight: 300;
+}
+
+select {
+    font-size: 12pt;
+    font-weight: 300;
+}
+
+label {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+button {
+    font-size: 12pt;
+    font-weight: 700;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main th, td {
+    padding: 6px;
+    padding: 4px 8px 4px 8px;
+}
+
+#main table td {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    padding: 5px 8px 5px 8px;
+    font-weight: 300;
+}
+
+.tooltip {
+    position: relative;
+    text-decoration: underline;
+    }
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -100px;
+}
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}

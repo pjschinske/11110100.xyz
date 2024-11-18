@@ -1,0 +1,87 @@
+---
+layout: custom-post
+title:  "Choosing wire sizes with SAE AS50881"
+date:   2024-11-18 11:26:00 -0800
+categories: electronics
+custom_css: wiresize
+custom_js: wiresize
+description: calculate reasonable wire ampacities with SAE AS50881
+---
+<div id="main">
+    <div>
+        <table id="table">
+            <tr>
+                <th>Material</th>
+                <th>Wire size</th>
+                <th class="tooltip">Max temp. rise (°C)
+                    <span class="tooltiptext">Max wire temp minus max ambient temp</span>
+                </th>
+                <th># in bundle</th>
+                <th># carrying current</th>
+                <th>Single wire ampacity</th>
+                <th>Total ampacity</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="material" class="update">
+                        <option value="copper">Copper</option>
+                        <option value="aluminum">Aluminum</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="gauge" class="update">
+                        <option value="28">28 AWG</option>
+                        <option value="26">26 AWG</option>
+                        <option value="24">24 AWG</option>
+                        <option value="22" selected>22 AWG</option>
+                        <option value="20">20 AWG</option>
+                        <option value="18">18 AWG</option>
+                        <option value="16">16 AWG</option>
+                        <option value="14">14 AWG</option>
+                        <option value="12">12 AWG</option>
+                        <option value="10">10 AWG</option>
+                        <option value="8">8 AWG</option>
+                        <option value="6">6 AWG</option>
+                        <option value="4">4 AWG</option>
+                        <option value="2">2 AWG</option>
+                        <option value="0">1/0 AWG</option>
+                        <option value="00">2/0 AWG</option>
+                        <option value="000">3/0 AWG</option>
+                        <option value="0000">4/0 AWG</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="number" class="update" name="max_temp" value="130" min="30" max="200">
+                </td>
+                <td>
+                    <input type="number" class="update" name="num_bundle" value="3" min="0">
+                </td>
+                <td>
+                    <input type="number" class="update" name="num_carrying_current"" value="2" min="0">
+                </td>
+                <td>0.0 A</td>
+                <td>0.0 A</td>
+            </tr>
+        </table>
+        <button id="add_row_button">Add another row</button>
+        <div>
+            <label for="altitude">Altitude (x1000 ft):</label>
+            <input type="number" id="altitude" class="update" value="0" min="0" max="100">
+        </div>
+        <div>
+            <label for="total_bundle_capacity">Total bundle ampacity:</label>
+            <b><label id="total_bundle_capacity">16.56566086 A</label></b>
+        </div>
+        <h2>Explanation</h2>
+        <div id="explanation">
+            <p>
+                I based this calculator off of SAE AS50881, which is a standard for wiring in aerospace vehicles. Among other things, it includes a process for wire sizing based of off how many wires are in the bundle and how many are carrying current.
+            <p>
+                Per the standard, these calculations only work for frequencies up to 800Hz. Above 800 Hz, skin effect and proximity effects become significant.
+            <p>
+                In reality, the numbers given here are probably only accurate to the standard by ~5%. The AS50881 standard has some information that is only available through graphs, and it doesn't give the equations, so I've had to reverse-engineer the equations behind the standard.
+            <p>
+                I've tried to make this reasonably accurate though; let me know if you find anything wrong. <b>If you're designing something serious, you might want to double check with the actual standard, not this random calculator you found on the internet.</b>
+        </div>
+    </div>
+</div>

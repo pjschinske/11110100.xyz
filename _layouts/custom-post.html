@@ -1,0 +1,9 @@
+---
+layout: post
+---
+
+{{ content }}
+
+{% if page.custom_js %}
+    <script src="{{site.baseurl}}/assets/js/{{page.custom_js}}.js" defer></script>
+{% endif %}
